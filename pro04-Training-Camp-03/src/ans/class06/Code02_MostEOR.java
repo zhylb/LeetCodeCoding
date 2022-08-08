@@ -81,7 +81,8 @@ public class Code02_MostEOR {
 		for (int i = 0; i < testTime; i++) {
 			int[] arr = generateRandomArray(maxSize, maxValue);
 			int res = mostEOR(arr);
-			int comp = comparator(arr);
+//			int comp = comparator(arr);
+			int comp = com.lihd.part06.Code02MostEOR.mostEOR(arr);
 			if (res != comp) {
 				succeed = false;
 				printArray(arr);

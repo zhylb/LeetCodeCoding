@@ -118,7 +118,8 @@ public class Code01_MaxEOR {
 		for (int i = 0; i < testTime; i++) {
 			int[] arr = generateRandomArray(maxSize, maxValue);
 			int comp = maxXorSubarray1(arr);
-			int res = maxXorSubarray2(arr);
+//			int res = maxXorSubarray2(arr);
+			int res = com.lihd.part06.Code01MaxEOR.maxEOR(arr);
 			if (res != comp) {
 				succeed = false;
 				printArray(arr);

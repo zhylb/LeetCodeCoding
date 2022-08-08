@@ -88,10 +88,6 @@ public class Code06UnionFind {
             return pointSize.size();
         }
 
-
-
-
-
     }
 
 }

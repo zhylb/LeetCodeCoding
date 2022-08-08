@@ -121,7 +121,8 @@ public class Code04_TopKSumCrossTwoArrays {
 		System.out.println(end - start + " ms");
 
 		start = System.currentTimeMillis();
-		int[] absolutelyRight = topKSumTest(arr1, arr2, k);
+//		int[] absolutelyRight = topKSumTest(arr1, arr2, k);
+		int[] absolutelyRight = com.lihd.part06.Code04TopKSumCrossTwoArrays.topKSum(arr1, arr2, k);
 		end = System.currentTimeMillis();
 		System.out.println(end - start + " ms");
 

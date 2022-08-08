@@ -81,7 +81,8 @@ public class Code05_Split4Parts {
 		int testTime = 3000000;
 		for (int i = 0; i < testTime; i++) {
 			int[] arr = generateRondomArray();
-			if (canSplits1(arr) ^ canSplits2(arr)) {
+//			if (canSplits1(arr) ^ canSplits2(arr)) {
+			if (com.lihd.part06.Code05Split4Parts.isSplit4PartsEqual(arr) ^ canSplits2(arr)) {
 				System.out.println("Error");
 			}
 		}
