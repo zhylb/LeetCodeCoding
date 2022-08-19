@@ -24,13 +24,11 @@ public class Code06StringCross {
             dp[0][i] = (dp[0][i - 1] && chs2[i - 1] == chs3[i - 1]);
         }
 
-
         for (int r = 1; r < row; r++) {
             for (int c = 1; c < col; c++) {
                 if(dp[r - 1][c] && chs1[r - 1] == chs3[r + c - 1]){
                     dp[r][c] = true;
                 }
-
                 if (dp[r][c - 1] && chs2[c - 1] == chs3[r + c - 1]) {
                     dp[r][c] = true;
                 }

@@ -82,7 +82,7 @@ public class Code02_MostEOR {
 			int[] arr = generateRandomArray(maxSize, maxValue);
 			int res = mostEOR(arr);
 //			int comp = comparator(arr);
-			int comp = com.lihd.part06.Code02MostEOR.mostEOR(arr);
+			int comp = com.lihd.part06.Code02MostEOR.mostEOR2(arr);
 			if (res != comp) {
 				succeed = false;
 				printArray(arr);

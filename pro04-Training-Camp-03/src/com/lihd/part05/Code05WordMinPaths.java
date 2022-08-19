@@ -22,23 +22,6 @@ public class Code05WordMinPaths {
         return res;
     }
 
-    public static void printMinPaths(List<List<String>> paths) {
-        for (List<String> path : paths) {
-            printPath(path);
-        }
-    }
-
-    private static void printPath(List<String> path) {
-        int size = path.size();
-        for (int i = 0; i < size; i++) {
-            if (i == size - 1) {
-                System.out.println(path.get(i));
-            } else {
-                System.out.print(path.get(i) + " -> ");
-            }
-        }
-    }
-
 
     public static void  DFS(String start,
                             String end,
@@ -60,15 +43,7 @@ public class Code05WordMinPaths {
     }
 
 
-    public static HashMap<String, List<String>> getNexts(String start, List<String> list) {
-        HashMap<String, List<String>> map = new HashMap<>();
-        map.put(start, getNext(start, list));
-        for (String s : list) {
-            map.put(s, getNext(s, list));
-        }
-        return map;
 
-    }
 
     //宽度优先遍历
     public static HashMap<String, Integer> getDistanceMap(String start, HashMap<String, List<String>> nexts) {
@@ -93,6 +68,16 @@ public class Code05WordMinPaths {
         return distance;
     }
 
+    public static HashMap<String, List<String>> getNexts(String start, List<String> list) {
+        HashMap<String, List<String>> map = new HashMap<>();
+        map.put(start, getNext(start, list));
+        for (String s : list) {
+            map.put(s, getNext(s, list));
+        }
+        return map;
+
+    }
+
     public static List<String> getNext(String start, List<String> list) {
         List<String> ans = new ArrayList<>();
         char[] chs = start.toCharArray();
@@ -110,6 +95,23 @@ public class Code05WordMinPaths {
             }
         }
         return ans;
+    }
+
+    public static void printMinPaths(List<List<String>> paths) {
+        for (List<String> path : paths) {
+            printPath(path);
+        }
+    }
+
+    private static void printPath(List<String> path) {
+        int size = path.size();
+        for (int i = 0; i < size; i++) {
+            if (i == size - 1) {
+                System.out.println(path.get(i));
+            } else {
+                System.out.print(path.get(i) + " -> ");
+            }
+        }
     }
 
     public static void main(String[] args) {

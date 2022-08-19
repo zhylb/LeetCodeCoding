@@ -9,6 +9,44 @@ import java.util.HashMap;
  */
 public class Code02MostEOR {
 
+
+    public static int mostEOR2(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return 0;
+        }
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(0, -1);
+        int eor = 0;
+        int[] dp = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            eor ^= arr[i];
+            if (map.containsKey(eor)) {
+                Integer lastIndex = map.get(eor);
+                if (lastIndex == -1) {
+                    dp[i] = 1;
+                } else {
+                    dp[i] = dp[lastIndex] + 1;
+                }
+
+            }
+            if (i > 0) {
+                dp[i] = Math.max(dp[i], dp[i - 1]);
+            }
+
+            map.put(eor, i);
+        }
+
+        return dp[arr.length - 1];
+    }
+
+
+
+
+
+
+
+
     public static int mostEOR(int[] arr) {
 
         if (arr == null || arr.length == 0) {
@@ -34,6 +72,5 @@ public class Code02MostEOR {
             map.put(eor, i);
         }
         return dp[arr.length - 1];
-
     }
 }

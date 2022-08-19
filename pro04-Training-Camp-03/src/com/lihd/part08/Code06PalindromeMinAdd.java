@@ -47,9 +47,15 @@ public class Code06PalindromeMinAdd {
         }
         for (int row = n - 3; row >= 0; row --) {
             for (int col = row + 2; col < n; col++) {
-                dp[row][col] = Math.min(dp[row + 1][col] + 1, dp[row][col - 1] + 1);
+//                dp[row][col] = Math.min(dp[row + 1][col] + 1, dp[row][col - 1] + 1);
+//                if (chs[row] == chs[col]) {
+//                    dp[row][col] = Math.min(dp[row][col], dp[row + 1][col - 1]);
+//                }
+
                 if (chs[row] == chs[col]) {
-                    dp[row][col] = Math.min(dp[row][col], dp[row + 1][col - 1]);
+                    dp[row][col] =  dp[row + 1][col - 1];
+                } else {
+                    dp[row][col] = Math.min(dp[row + 1][col] + 1, dp[row][col - 1] + 1);
                 }
 
             }

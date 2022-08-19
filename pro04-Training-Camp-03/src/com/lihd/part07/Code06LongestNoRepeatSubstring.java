@@ -11,11 +11,8 @@ import java.util.HashMap;
  */
 public class Code06LongestNoRepeatSubstring {
     public static int getLongestNoRepeatSubString(@NotNull String s) {
-
         HashMap<Character, Integer> map = new HashMap<>();
-
         char[] chs = s.toCharArray();
-
         int[] dp = new int[chs.length];
         //下面这两行一定不能少，尤其是 map.put()这个。
         dp[0] = 1;

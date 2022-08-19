@@ -7,6 +7,24 @@ package com.lihd.part06;
  */
 public class Code03JumpGame {
 
+    public static int jump2(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return 0;
+        }
+
+        int step = 0;
+        int border = 0;
+        int nextBorder = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (i > border) {
+                step++;
+                border = nextBorder;
+            }
+            nextBorder = Math.max(nextBorder, i + arr[i]);
+        }
+        return step;
+    }
+
 
     public static int minJumpNum(int[] jump) {
 
@@ -14,14 +32,12 @@ public class Code03JumpGame {
         int curRange = 0;
         int maxRange = -1;
         for (int i = 0; i < jump.length; i++) {
-            if (i <= curRange) {
-                //还在范围内
-                maxRange = Math.max(maxRange, jump[i] + i);
-            } else {
+            if (i > curRange) {
                 times ++;
                 curRange = maxRange;
                 maxRange = -1;
             }
+            maxRange = Math.max(maxRange, jump[i] + i);
         }
         return times;
     }
@@ -32,8 +48,10 @@ public class Code03JumpGame {
 
     public static void main(String[] args) {
         int[] arr = { 3, 2, 3, 1, 1, 4 };
+        arr = new int[]{3, 3, 2, 1, 2, 5, 8, 1};
         int minJumpNum = minJumpNum(arr);
         System.out.println("minJumpNum = " + minJumpNum);
+        System.out.println(jump2(arr));
     }
 
 }

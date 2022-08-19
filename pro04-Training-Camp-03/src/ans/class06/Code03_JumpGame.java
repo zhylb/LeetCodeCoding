@@ -2,6 +2,12 @@ package ans.class06;
 
 public class Code03_JumpGame {
 
+
+
+
+
+
+
 	public static int jump(int[] arr) {
 		if (arr == null || arr.length == 0) {
 			return 0;
@@ -20,9 +26,8 @@ public class Code03_JumpGame {
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { 3, 2, 3, 1, 1, 4 };
+		int[] arr = {3, 4, 2, 1, 2, 5, 8, 1};
 		System.out.println(jump(arr));
-
 	}
 
 }

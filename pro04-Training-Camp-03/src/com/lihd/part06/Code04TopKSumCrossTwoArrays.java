@@ -1,6 +1,5 @@
 package com.lihd.part06;
 
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import java.util.PriorityQueue;
 
 /**

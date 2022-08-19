@@ -29,6 +29,7 @@ public class Code02ExpressionNumber {
                     //枚举每个分割符
                     if (chs[i] == '&') {
                         trueDp[l][r] += trueDp[l][i - 1] * trueDp[i + 1][r];
+
                         falseDp[l][r] += trueDp[l][i - 1] * falseDp[i + 1][r];
                         falseDp[l][r] += falseDp[l][i - 1] * trueDp[i + 1][r];
                         falseDp[l][r] += falseDp[l][i - 1] * falseDp[i + 1][r];
