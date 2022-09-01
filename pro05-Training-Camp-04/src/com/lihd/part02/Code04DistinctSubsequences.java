@@ -1,6 +1,8 @@
 package com.lihd.part02;
 
 /**
+ * <a href="https://leetcode.com/problems/distinct-subsequences">leetcode链接</a>
+ *
  * @author : 葬花吟留别1851053336@qq.com
  * &#064;description : TODO
  * &#064;date : 2022/8/10 20:58
@@ -10,6 +12,9 @@ public class Code04DistinctSubsequences {
 
 
     /**
+     * <a href="https://leetcode.com/problems/distinct-subsequences">leetcode链接</a>
+     * 21 ms, faster than 77.52%
+     * 50 MB, less than 62.10%
      * 动态规划
      * dp[i][j]的含义 ：可以在s[0...i]上任意删除，删除出 t[0...j]的方法数
      * 行列对应模型，直接二维表，二维表讨论直接根据以 某个位置作为结尾考虑情况
