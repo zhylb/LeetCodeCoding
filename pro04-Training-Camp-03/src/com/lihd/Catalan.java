@@ -27,7 +27,7 @@ public class Catalan {
     }
 
     public static void main(String[] args) {
-        List<BigInteger> list = getCatalanList(10000);
+        List<BigInteger> list = getCatalanList(100);
         for (int i = 0; i < list.size(); i++) {
             System.out.println(i + " : " + list.get(i));
         }
